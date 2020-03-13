@@ -20,22 +20,22 @@ Route::get('/user', function() {
     return 'User';
 });
 
-// routing dengan 1 parameter
+// ROUTING DENGAN 1 PARAMETER
 Route::get('/user/{id}', function($id) {
     return 'User '.$id;
 });
 
-// routing dengan banyak parameter
+// ROUTING DENGAN BANYAK PARAMETER
 Route::get('/user/{id}/article/{articleId}', function($id, $articleId) {
     return 'User '.$id.' Artikel '.$articleId;
 });
 
-// routing dengan 1 parameter opsional
+// ROUTING DENGAN 1 PARAMETER OPSIONAL
 Route::get('/admin/{id?}', function($id = null) {
     return 'Admin '.$id;
 });
 
-// route group
+// ROUTE GROUP
 Route::prefix('account')->group(function() {
     // definisikan route
     Route::get('/change-password', function() {
@@ -51,7 +51,7 @@ Route::prefix('account')->group(function() {
     });
 });
 
-// route group dalam route group
+// ROUTE GROUP DALAM ROUTE GROUP
 Route::prefix('account')->group(function() {
     Route::prefix('setting')->group(function() {
         // definisikan route
@@ -72,3 +72,12 @@ Route::prefix('account')->group(function() {
         return 'Follower';
     });
 });
+
+// ROUTE ALIAS NAME
+Route::get('redirect', function() {
+    return redirect()->route('homepage');
+});
+
+Route::get('home/landing', function() {
+    return 'Landing';
+})->name('homepage');
