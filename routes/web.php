@@ -34,3 +34,41 @@ Route::get('/user/{id}/article/{articleId}', function($id, $articleId) {
 Route::get('/admin/{id?}', function($id = null) {
     return 'Admin '.$id;
 });
+
+// route group
+Route::prefix('account')->group(function() {
+    // definisikan route
+    Route::get('/change-password', function() {
+        return 'change-password';
+    });
+
+    Route::get('/profile', function() {
+        return 'profile';
+    });
+
+    Route::get('/photo', function() {
+        return 'photo';
+    });
+});
+
+// route group dalam route group
+Route::prefix('account')->group(function() {
+    Route::prefix('setting')->group(function() {
+        // definisikan route
+        Route::get('/change-password', function() {
+            return 'change-password';
+        });
+
+        Route::get('/profile', function() {
+            return 'profile';
+        });
+
+        Route::get('/photo', function() {
+            return 'photo';
+        });
+    });
+
+    Route::get('/follower', function() {
+        return 'Follower';
+    });
+});
