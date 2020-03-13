@@ -19,3 +19,18 @@ Route::get('/', function () {
 Route::get('/user', function() {
     return 'User';
 });
+
+// routing dengan 1 parameter
+Route::get('/user/{id}', function($id) {
+    return 'User '.$id;
+});
+
+// routing dengan banyak parameter
+Route::get('/user/{id}/article/{articleId}', function($id, $articleId) {
+    return 'User '.$id.' Artikel '.$articleId;
+});
+
+// routing dengan 1 parameter opsional
+Route::get('/admin/{id?}', function($id = null) {
+    return 'Admin '.$id;
+});
