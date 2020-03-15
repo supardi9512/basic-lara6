@@ -130,8 +130,9 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'email' => [
+            'required' => 'Kolom :attribute harus diisi',
+            'email' => 'Format :attribute tidak valid',
         ],
     ],
 
