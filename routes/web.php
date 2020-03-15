@@ -11,9 +11,11 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/user', 'HomeController@index')->name('user');
 
 
 // Route::get('/user', function() {
@@ -88,8 +90,8 @@
 // // API RESOURCE
 // Route::apiResource('article', 'ArticleController');
 
-// ROUTE VIEW
-Route::view('/', 'welcome');
+// // ROUTE VIEW
+// Route::view('/', 'welcome');
 
-// ROUTE REDIRECT
-Route::redirect('/disini', 'kesana');
+// // ROUTE REDIRECT
+// Route::redirect('/disini', 'kesana');
