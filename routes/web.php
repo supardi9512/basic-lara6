@@ -11,11 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/user', 'HomeController@index')->name('user');
+Route::get('/', 'HomeController@index')->name('home');
+Route::post('/', 'HomeController@store');
 
 
 // Route::get('/user', function() {

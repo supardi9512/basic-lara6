@@ -6,10 +6,16 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        echo $request->name;
-        // echo $request->get('name', 'kosong');
-        // echo request('name');
+        return '<form action="'.route('home').'" method="post">
+            <input type="text" name="email">
+            <input type="submit" value="Oke">
+        </form>';
+    }
+
+    public function store(Request $request)
+    {
+        echo $request->email;
     }
 }
