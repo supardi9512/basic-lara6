@@ -7,10 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{{ route('todo.store') }}" method="post">
+    <form action="{{ route('subscribe') }}" method="post">
         @csrf
-        <input type="text" name="todo">
-        <input type="submit" value="Save">
+        <label for="">
+            <input type="text" name="email">
+        </label>
+        @if($errors->has('email'))
+            {{ $errors->first('email') }}
+        @endif
+        <input type="submit" value="Subscribe">
     </form>
 </body>
 </html>

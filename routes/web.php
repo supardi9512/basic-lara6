@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::post('/todo', 'HomeController@store')->name('todo.store');
+Route::post('/', 'HomeController@store')->name('subscribe');
 
 
 // Route::get('/user', function() {
