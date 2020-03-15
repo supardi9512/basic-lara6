@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 // Route::get('/user', function() {
@@ -82,8 +82,14 @@ Route::get('/', function () {
 //     return 'Landing';
 // })->name('homepage');
 
-// ROUTE RESOURCE
-Route::resource('article', 'ArticleController');
+// // ROUTE RESOURCE
+// Route::resource('article', 'ArticleController');
 
-// API RESOURCE
-Route::apiResource('article', 'ArticleController');
+// // API RESOURCE
+// Route::apiResource('article', 'ArticleController');
+
+// ROUTE VIEW
+Route::view('/', 'welcome');
+
+// ROUTE REDIRECT
+Route::redirect('/disini', 'kesana');
