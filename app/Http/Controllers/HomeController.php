@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return 'Test Doang';
+        echo $request->name;
+        // echo $request->get('name', 'kosong');
+        // echo request('name');
     }
 }
