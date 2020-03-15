@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/user/{username}', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+Route::post('/todo', 'HomeController@store')->name('todo.store');
 
 
 // Route::get('/user', function() {
