@@ -12,7 +12,7 @@
         <form action="{{ route('subscribe') }}" method="post">
             @csrf
             <div class="form-group">
-                <input type="text" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="Masukkan Email">
+                <input type="text" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="Masukkan Email" value="{{ old('email') }}">
                 @if($errors->has('email'))
                     <div class="invalid-feedback">
                         {{ $errors->first('email') }}
