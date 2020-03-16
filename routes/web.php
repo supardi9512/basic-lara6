@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('lain', 'HomeController@other')->name('other');
 Route::post('/', 'HomeController@store')->name('subscribe');
 
 

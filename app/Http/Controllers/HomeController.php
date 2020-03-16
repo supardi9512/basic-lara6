@@ -12,9 +12,16 @@ class HomeController extends Controller
         return view('home');
     }
 
+    public function other()
+    {
+        return 'Other Route';
+    }
+
     public function store(SubscriptionFormRequest $request)
     {
-        dd('Berhasil Langganan');
+        return redirect()->route('other');
+        // return redirect()->back();
+        // return back();
     }
 
 }
