@@ -4,20 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\Newsletter\SubscriptionFormRequest;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\UserVerificationMail;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $data = [
-            'posts' => [
-                ['id' => 1, 'title' => 'ABC'],
-                ['id' => 2, 'title' => 'DEF'],
-                ['id' => 3, 'title' => 'GHI'],
-            ]
-        ];
+        Mail::to('ahmad@belajar.test')->send(new UserVerificationMail());
 
-        return response()->json($data, 201);
+        return 'Email terkirim';
     }
 
     public function other()
