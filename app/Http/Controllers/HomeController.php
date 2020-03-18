@@ -11,9 +11,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        Mail::to('ahmad@belajar.test')->send(new UserActivationMail());
+        // Mail::to('ahmad@belajar.test')->send(new UserActivationMail());
 
-        return 'Email terkirim';
+        return new UserActivationMail();
     }
 
     public function other()
