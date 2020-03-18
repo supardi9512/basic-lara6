@@ -1,5 +1,5 @@
 <?php
-// php artisan make:mail UserVerificationMail
+// php artisan make:mail UserActivationMail --markdown=emails.activation
 
 namespace App\Mail;
 
@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class UserVerificationMail extends Mailable
+class UserActivationMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -29,6 +29,6 @@ class UserVerificationMail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.verification');
+        return $this->markdown('emails.activation');
     }
 }

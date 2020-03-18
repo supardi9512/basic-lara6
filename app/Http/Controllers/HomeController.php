@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\Newsletter\SubscriptionFormRequest;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\UserVerificationMail;
+use App\Mail\UserActivationMail;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        Mail::to('ahmad@belajar.test')->send(new UserVerificationMail());
+        Mail::to('ahmad@belajar.test')->send(new UserActivationMail());
 
         return 'Email terkirim';
     }
