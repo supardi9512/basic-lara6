@@ -10,7 +10,7 @@ class Post extends Model
     // Tidak perlu didefinisikan, karena sudah sesuai dengan penamaan file model dengan singular (tanpa -s)
     // protected $table = 'posts';
 
-    // property untuk pengisian massal dengan method create
+    // property untuk pengisian massal dengan method create, jika save tidak perlu property fillable
     protected $fillable = [
         'title',
         'content'
