@@ -11,21 +11,19 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('lain', 'HomeController@other')->name('other');
-Route::post('/', 'HomeController@store')->name('subscribe');
+Route::get('/', 'PostController@index');
 
-// Membuat fake data
-Route::get('/seed', function(\App\Post $post) {
-    $faker = Faker\Factory::create();
+// // Membuat fake data
+// Route::get('/seed', function(\App\Post $post) {
+//     $faker = Faker\Factory::create();
 
-    foreach(range(1, 100) as $x) {
-        $post->create([
-            'title' => $faker->sentence(5),
-            'content' => $faker->sentence(50)
-        ]);
-    }
-});
+//     foreach(range(1, 100) as $x) {
+//         $post->create([
+//             'title' => $faker->sentence(5),
+//             'content' => $faker->sentence(50)
+//         ]);
+//     }
+// });
 
 // Route::get('/user', function() {
 //     return 'User';
