@@ -62,4 +62,10 @@ class User extends Authenticatable
     {
         return $query->where('age', '>=', $age);
     }
+
+    // ROUTE MODEL BINDING
+    // public function getRouteKeyName()
+    // {
+    //     return 'username';
+    // }
 }

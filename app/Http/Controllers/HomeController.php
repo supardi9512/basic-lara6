@@ -16,4 +16,9 @@ class HomeController extends Controller
 
         dd($user);
     }
+
+    public function show(User $user)
+    {
+        dd($user);
+    }
 }

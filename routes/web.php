@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
-// Route::get('/{id}', 'PostController@index');
+Route::get('/user/{user}', 'HomeController@show');
 
 // // Membuat fake data
 // Route::get('/seed', function(\App\Post $post) {
