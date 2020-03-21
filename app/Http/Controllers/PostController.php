@@ -41,8 +41,22 @@ class PostController extends Controller
         // ]);
 
         // MENGHAPUS DATA
-        $post = Post::findOrFail($request->id);
+        // $post = Post::findOrFail($request->id);
 
-        $post->delete();
+        // $post->delete();
+
+        // MENCARI DATA / MENAMPILKAN DATA BERDASARKAN KONDISI
+        // $post = Post::where('is_published', false)->get();
+        // $post = Post::where('is_published', '!=', true)->get();
+
+        // MENGURUTKAN DATA
+        // $post = Post::orderBy('id', 'desc')->get();
+        // $post = Post::latest()->get();
+
+        // MENAMPILKAN SEBAGIAN DATA
+        // $post = Post::latest()->take(2)->get();
+        $post = Post::latest()->limit(2)->get();
+
+        dd($post);
     }
 }
