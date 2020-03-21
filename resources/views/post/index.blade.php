@@ -13,7 +13,19 @@
             <h1>{{ $post->title }}</h1>
         @endforeach
 
-        {{ $posts->render() }}
+        <!-- {{ $posts->appends([
+            'per-page' => Request::get('per-page'),
+            'order' => Request::get('order'),
+        ])->render() }} -->
+
+        <!-- PERSINGKAT -->
+        <!-- {{ $posts->appends([
+            'per-page' => request('per-page'),
+            'order' => request('order'),
+        ])->render() }} -->
+
+        <!-- LEBIH PERSINGKAT -->
+        {{ $posts->appends(request()->only('per-page', 'only'))->render() }}
     @endif
 </body>
 </html>
