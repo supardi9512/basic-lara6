@@ -51,4 +51,15 @@ class User extends Authenticatable
 
         return $this->first_name;
     }
+
+    // FITUR SCOPE
+    public function scopeActive($query)
+    {
+        return $query->where('activated', true);
+    }
+
+    public function scopeAgeGreaterThan($query, $age)
+    {
+        return $query->where('age', '>=', $age);
+    }
 }

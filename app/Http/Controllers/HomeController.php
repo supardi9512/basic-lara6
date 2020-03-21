@@ -12,12 +12,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $user = User::where('username', 'supardi')->first();
+        $user = User::active()->ageGreaterThan(15)->get();
 
-        return $user->getFirstNameOrUsername();
-
-        // bisa juga langsung mengakses propertynya seperti ini jika kasusnya simpel, 
-        // tanpa menggunakan eloquent model
-        // return $user->username;
+        dd($user);
     }
 }
