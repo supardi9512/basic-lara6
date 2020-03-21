@@ -11,8 +11,8 @@
 |
 */
 
-// Route::get('/', 'PostController@index');
-Route::get('/{id}', 'PostController@index');
+Route::get('/', 'HomeController@index');
+// Route::get('/{id}', 'PostController@index');
 
 // // Membuat fake data
 // Route::get('/seed', function(\App\Post $post) {

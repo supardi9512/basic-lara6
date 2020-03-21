@@ -6,26 +6,18 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Newsletter\SubscriptionFormRequest;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserActivationMail;
+use App\User;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        // Mail::to('ahmad@belajar.test')->send(new UserActivationMail());
+        $user = User::where('username', 'supardi')->first();
 
-        return new UserActivationMail();
+        return $user->getFirstNameOrUsername();
+
+        // bisa juga langsung mengakses propertynya seperti ini jika kasusnya simpel, 
+        // tanpa menggunakan eloquent model
+        // return $user->username;
     }
-
-    public function other()
-    {
-        return 'Other Route';
-    }
-
-    public function store(SubscriptionFormRequest $request)
-    {
-        return redirect()->route('other');
-        // return redirect()->back();
-        // return back();
-    }
-
 }
