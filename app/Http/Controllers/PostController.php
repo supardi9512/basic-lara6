@@ -55,8 +55,13 @@ class PostController extends Controller
 
         // MENAMPILKAN SEBAGIAN DATA
         // $post = Post::latest()->take(2)->get();
-        $post = Post::latest()->limit(2)->get();
+        // $post = Post::latest()->limit(2)->get();
 
-        dd($post);
+        // BEKERJA DENGAN DATA TANGGAL DAN WAKTU
+        $post = Post::find($request->id);
+
+        return view('post.show', [
+            'post' => $post
+        ]);
     }
 }

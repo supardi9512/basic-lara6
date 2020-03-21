@@ -18,4 +18,9 @@ class Post extends Model
 
     // alternatifnya, tanpa mendefinisikan nama kolom
     // protected $guarded = [];
+
+    // MENDAFTARKAN published_at sebagai instance Carbon
+    protected $dates = [
+        'published_at',
+    ];
 }
