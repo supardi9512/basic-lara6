@@ -103,3 +103,7 @@ Route::get('/', 'PostController@index');
 
 // // ROUTE REDIRECT
 // Route::redirect('/disini', 'kesana');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

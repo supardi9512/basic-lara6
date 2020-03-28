@@ -3,22 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\Newsletter\SubscriptionFormRequest;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\UserActivationMail;
-use App\User;
 
 class HomeController extends Controller
 {
-    public function index()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        $user = User::active()->ageGreaterThan(15)->get();
-
-        dd($user);
+        $this->middleware('auth');
     }
 
-    public function show(User $user)
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
     {
-        dd($user);
+        return view('home');
     }
 }
